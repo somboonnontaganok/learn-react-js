@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import MyButton from './components/MyButton'
+import MyProfile from './components/MyProfile'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -43,9 +44,9 @@ function App() {
   return (
     // Recat Fragment
     <>
-      <h1>Welcome to Poon App</h1>
-      <p>My Name is {user.firstName} {user.lastName}</p>
-      <img src={user.imgPic} width="380" />
+      <h1>Welcome to Poon Studio</h1>
+      <MyProfile data={user}/>
+      
       <br />
       <h1>Counters that update separately</h1>
       <p>{count}</p>
