@@ -32,17 +32,25 @@ function App() {
       </li>
   );
 
+  function handleClick() {
+    setCount(count + 1)
+  }
+
+  function handleClickMinus() {
+    setCount(count - 1)
+  }
+
   return (
     // Recat Fragment
     <>
       <h1>Welcome to Poon App</h1>
-      <p>{count}</p>
       <p>My Name is {user.firstName} {user.lastName}</p>
-      <img src={user.imgPic} alt={user.firstName} width="3 50" height="auto" />
+      <img src={user.imgPic} width="380" />
       <br />
       <h1>Counters that update separately</h1>
-      <MyButton />
-      <MyButton />
+      <p>{count}</p>
+      <button onClick={handleClick}>Increase</button>
+      <button onClick={handleClickMinus}>Decrease</button>
       <br />
       {/* Ternary operator */}
       {ifTrue ? "Yes, it's true" : "No, it's false"}
@@ -50,19 +58,6 @@ function App() {
       <ul>{listItems}</ul>
     </>
   )
-  function MyButton() {
-    const [count, setCount] = useState(0);
-  
-    function handleClick() {
-      setCount(count + 1);
-    }
-  
-    return (
-      <button onClick={handleClick}>
-        Clicked {count} times
-      </button>
-    );
-  }
 }
 
 export default App
